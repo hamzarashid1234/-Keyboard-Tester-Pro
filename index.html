@@ -1,120 +1,663 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Keyboard Tester Pro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Tester Pro - Free Online Keyboard Test</title>
 
-<link rel="stylesheet" href="style.css">
+    <meta name="description" content="Keyboard Tester Pro is a free online keyboard testing tool. Test your keyboard keys, key codes, repeated keys, and common keyboard problems directly in your browser.">
+    <meta name="keywords" content="keyboard tester, keyboard test, online keyboard tester, test keyboard, keyboard key test, laptop keyboard test">
+    <meta name="author" content="Keyboard Tester Pro">
+    <meta name="robots" content="index, follow">
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6930606682125799"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6930606682125799" crossorigin="anonymous"></script>
 
+    <link rel="stylesheet" href="style.css">
 </head>
-  
+
 <body>
 
-<div class="background"></div>
+<!-- =========================
+     HEADER
+========================= -->
 
-<div class="container">
+<header class="site-header">
+    <div class="container nav-container">
+        <a href="#home" class="logo">
+            <span class="logo-icon">⌨</span>
+            <span>Keyboard Tester Pro</span>
+        </a>
+        <button class="menu-button" id="menuButton" aria-label="Open navigation menu">☰</button>
+        <nav class="navigation" id="navigation">
+            <a href="#home">Home</a>
+            <a href="#tester">Keyboard Test</a>
+            <a href="#details">Details</a>
+            <a href="#guide">Guide</a>
+            <a href="#faq">FAQ</a>
+            <a href="#about">About</a>
+            <a href="#privacy">Privacy</a>
+        </nav>
+    </div>
+</header>
 
-<h1>⌨ Keyboard Tester Pro</h1>
 
-<p class="subtitle">
-Press any key on your keyboard to test its functionality in real time.
-</p>
+<main>
 
-<div class="dashboard">
+<!-- =========================
+     HERO
+========================= -->
 
-<div class="box">
-<span>Key</span>
-<h2 id="key">-</h2>
-</div>
+<section class="hero" id="home">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <span class="badge">FREE ONLINE KEYBOARD TESTER</span>
+            <h1>Test Your Keyboard Online</h1>
+            <p class="hero-description">
+                Keyboard Tester Pro is a simple browser-based tool for checking
+                whether your keyboard keys are responding correctly. Press a key
+                and see its name, keyboard code, status, and total press count
+                instantly.
+            </p>
+            <div class="hero-buttons">
+                <a href="#tester" class="primary-button">Start Keyboard Test</a>
+                <a href="#details" class="secondary-button">Keyboard Details</a>
+            </div>
+        </div>
+        <div class="hero-card">
+            <div class="hero-card-icon">⌨️</div>
+            <h2>Quick keyboard check</h2>
+            <p>No software installation is required. Your browser can detect normal keyboard events directly on this page.</p>
+            <div class="mini-stats">
+                <div><strong>Free</strong><span>Tool</span></div>
+                <div><strong>Live</strong><span>Detection</span></div>
+                <div><strong>Browser</strong><span>Based</span></div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<div class="box">
-<span>Code</span>
-<h2 id="code">-</h2>
-</div>
 
-<div class="box">
-<span>Status</span>
-<h2 id="status">Waiting</h2>
-</div>
+<!-- =========================
+     KEYBOARD TESTER
+========================= -->
 
-<div class="box">
-<span>Total Presses</span>
-<h2 id="count">0</h2>
-</div>
+<section class="section tester-section" id="tester">
+    <div class="container">
 
-</div>
+        <div class="section-heading">
+            <span class="section-label">KEYBOARD TEST</span>
+            <h2>Test Your Keyboard Keys</h2>
+            <p>
+                Click inside the tester and press keys on your physical
+                keyboard. The tester will highlight detected keys and display
+                useful information about each keyboard event.
+            </p>
+        </div>
 
-<div class="keyboard">
+        <!-- Information Cards -->
+        <div class="info-grid">
+            <div class="info-card"><span>Key</span><strong id="keyDisplay">—</strong></div>
+            <div class="info-card"><span>Code</span><strong id="codeDisplay">—</strong></div>
+            <div class="info-card"><span>Status</span><strong id="statusDisplay">Waiting</strong></div>
+            <div class="info-card"><span>Total Presses</span><strong id="pressCount">0</strong></div>
+        </div>
 
-<!-- Numbers -->
+        <!-- Test Area -->
+        <div class="test-area" id="testArea" tabindex="0" aria-label="Keyboard testing area">
+            <div class="test-message">
+                <div class="test-icon">⌨️</div>
+                <h3>Press any key</h3>
+                <p>Click this area if necessary, then press a key on your physical keyboard.</p>
+            </div>
+        </div>
 
-<div class="key" data-key="Escape">Esc</div>
 
-<div class="key" data-key="1">1</div>
-<div class="key" data-key="2">2</div>
-<div class="key" data-key="3">3</div>
-<div class="key" data-key="4">4</div>
-<div class="key" data-key="5">5</div>
-<div class="key" data-key="6">6</div>
-<div class="key" data-key="7">7</div>
-<div class="key" data-key="8">8</div>
-<div class="key" data-key="9">9</div>
-<div class="key" data-key="0">0</div>
+        <!-- ============================================
+             KEYBOARD + DETAILS SECTION
+        ============================================= -->
 
-<div class="key wide" data-key="Backspace">
-Backspace
-</div>
+        <div class="keyboard-details-section">
 
-<div class="key wide" data-key="Tab">Tab</div>
+            <!-- LEFT: SIMPLE FLAT KEYBOARD -->
+            <div class="keyboard-wrapper-3d">
+                <div class="keyboard-title">
+                    <div>
+                        <h3>Keyboard Visualizer</h3>
+                        <p>Detected keys will be highlighted while you test.</p>
+                    </div>
+                    <button class="clear-button" id="clearButton">Reset Test</button>
+                </div>
 
-<div class="key" data-key="q">Q</div>
-<div class="key" data-key="w">W</div>
-<div class="key" data-key="e">E</div>
-<div class="key" data-key="r">R</div>
-<div class="key" data-key="t">T</div>
-<div class="key" data-key="y">Y</div>
-<div class="key" data-key="u">U</div>
-<div class="key" data-key="i">I</div>
-<div class="key" data-key="o">O</div>
-<div class="key" data-key="p">P</div>
+                <div class="keyboard" id="keyboard">
 
-<div class="key enter" data-key="Enter">Enter</div>
+                    <!-- FUNCTION KEYS -->
+                    <div class="keyboard-row">
+                        <button class="key key-small" data-key="Escape">Esc</button>
+                        <button class="key" data-key="F1">F1</button>
+                        <button class="key" data-key="F2">F2</button>
+                        <button class="key" data-key="F3">F3</button>
+                        <button class="key" data-key="F4">F4</button>
+                        <button class="key" data-key="F5">F5</button>
+                        <button class="key" data-key="F6">F6</button>
+                        <button class="key" data-key="F7">F7</button>
+                        <button class="key" data-key="F8">F8</button>
+                        <button class="key" data-key="F9">F9</button>
+                        <button class="key" data-key="F10">F10</button>
+                        <button class="key" data-key="F11">F11</button>
+                        <button class="key" data-key="F12">F12</button>
+                    </div>
 
-<div class="key shift" data-key="Shift">Shift</div>
+                    <!-- SYSTEM / NAVIGATION -->
+                    <div class="keyboard-row">
+                        <button class="key key-medium" data-key="PrintScreen">PrtSc</button>
+                        <button class="key key-medium" data-key="ScrollLock">ScrLk</button>
+                        <button class="key key-medium" data-key="Pause">Pause</button>
+                        <button class="key" data-key="Insert">Ins</button>
+                        <button class="key" data-key="Home">Home</button>
+                        <button class="key" data-key="PageUp">PgUp</button>
+                        <button class="key" data-key="Delete">Delete</button>
+                        <button class="key" data-key="End">End</button>
+                        <button class="key" data-key="PageDown">PgDn</button>
+                    </div>
 
-<div class="key" data-key="a">A</div>
-<div class="key" data-key="s">S</div>
-<div class="key" data-key="d">D</div>
-<div class="key" data-key="f">F</div>
-<div class="key" data-key="g">G</div>
-<div class="key" data-key="h">H</div>
-<div class="key" data-key="j">J</div>
-<div class="key" data-key="k">K</div>
-<div class="key" data-key="l">L</div>
+                    <!-- NUMBER ROW -->
+                    <div class="keyboard-row">
+                        <button class="key" data-key="Backquote">~</button>
+                        <button class="key" data-key="Digit1">1</button>
+                        <button class="key" data-key="Digit2">2</button>
+                        <button class="key" data-key="Digit3">3</button>
+                        <button class="key" data-key="Digit4">4</button>
+                        <button class="key" data-key="Digit5">5</button>
+                        <button class="key" data-key="Digit6">6</button>
+                        <button class="key" data-key="Digit7">7</button>
+                        <button class="key" data-key="Digit8">8</button>
+                        <button class="key" data-key="Digit9">9</button>
+                        <button class="key" data-key="Digit0">0</button>
+                        <button class="key" data-key="Minus">-</button>
+                        <button class="key" data-key="Equal">=</button>
+                        <button class="key key-wide" data-key="Backspace">Backspace</button>
+                    </div>
 
-<div class="key shift" data-key="Shift">Shift</div>
+                    <!-- QWERTY -->
+                    <div class="keyboard-row">
+                        <button class="key key-wide" data-key="Tab">Tab</button>
+                        <button class="key" data-key="KeyQ">Q</button>
+                        <button class="key" data-key="KeyW">W</button>
+                        <button class="key" data-key="KeyE">E</button>
+                        <button class="key" data-key="KeyR">R</button>
+                        <button class="key" data-key="KeyT">T</button>
+                        <button class="key" data-key="KeyY">Y</button>
+                        <button class="key" data-key="KeyU">U</button>
+                        <button class="key" data-key="KeyI">I</button>
+                        <button class="key" data-key="KeyO">O</button>
+                        <button class="key" data-key="KeyP">P</button>
+                        <button class="key" data-key="BracketLeft">[</button>
+                        <button class="key" data-key="BracketRight">]</button>
+                        <button class="key" data-key="Backslash">\</button>
+                    </div>
 
-<div class="key" data-key="z">Z</div>
-<div class="key" data-key="x">X</div>
-<div class="key" data-key="c">C</div>
-<div class="key" data-key="v">V</div>
-<div class="key" data-key="b">B</div>
-<div class="key" data-key="n">N</div>
-<div class="key" data-key="m">M</div>
+                    <!-- HOME -->
+                    <div class="keyboard-row">
+                        <button class="key key-extra-wide" data-key="CapsLock">Caps Lock</button>
+                        <button class="key" data-key="KeyA">A</button>
+                        <button class="key" data-key="KeyS">S</button>
+                        <button class="key" data-key="KeyD">D</button>
+                        <button class="key" data-key="KeyF">F</button>
+                        <button class="key" data-key="KeyG">G</button>
+                        <button class="key" data-key="KeyH">H</button>
+                        <button class="key" data-key="KeyJ">J</button>
+                        <button class="key" data-key="KeyK">K</button>
+                        <button class="key" data-key="KeyL">L</button>
+                        <button class="key" data-key="Semicolon">;</button>
+                        <button class="key" data-key="Quote">'</button>
+                        <button class="key key-extra-wide" data-key="Enter">Enter</button>
+                    </div>
 
-<div class="key space" data-key=" ">
-SPACE
-</div>
+                    <!-- SHIFT -->
+                    <div class="keyboard-row">
+                        <button class="key key-extra-wide" data-key="ShiftLeft">Shift</button>
+                        <button class="key" data-key="KeyZ">Z</button>
+                        <button class="key" data-key="KeyX">X</button>
+                        <button class="key" data-key="KeyC">C</button>
+                        <button class="key" data-key="KeyV">V</button>
+                        <button class="key" data-key="KeyB">B</button>
+                        <button class="key" data-key="KeyN">N</button>
+                        <button class="key" data-key="KeyM">M</button>
+                        <button class="key" data-key="Comma">,</button>
+                        <button class="key" data-key="Period">.</button>
+                        <button class="key" data-key="Slash">/</button>
+                        <button class="key key-extra-wide" data-key="ShiftRight">Shift</button>
+                    </div>
 
-</div>
+                    <!-- CONTROL / SPACE -->
+                    <div class="keyboard-row">
+                        <button class="key" data-key="ControlLeft">Ctrl</button>
+                        <button class="key" data-key="MetaLeft">Win</button>
+                        <button class="key" data-key="AltLeft">Alt</button>
+                        <button class="key key-space" data-key="Space">SPACE</button>
+                        <button class="key" data-key="AltRight">Alt</button>
+                        <button class="key" data-key="MetaRight">Win</button>
+                        <button class="key" data-key="ContextMenu">Menu</button>
+                        <button class="key" data-key="ControlRight">Ctrl</button>
+                    </div>
 
-</div>
+                    <!-- ARROWS -->
+                    <div class="keyboard-row arrow-row">
+                        <div class="arrow-spacer"></div>
+                        <button class="key arrow-key" data-key="ArrowUp">↑</button>
+                        <div class="arrow-spacer"></div>
+                    </div>
+                    <div class="keyboard-row arrow-row">
+                        <button class="key arrow-key" data-key="ArrowLeft">←</button>
+                        <button class="key arrow-key" data-key="ArrowDown">↓</button>
+                        <button class="key arrow-key" data-key="ArrowRight">→</button>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- RIGHT: KEYBOARD DETAILS PANEL -->
+            <div class="details-panel" id="details">
+
+                <div class="details-header">
+                    <span class="section-label">KEYBOARD INFO</span>
+                    <h3>Keyboard Details</h3>
+                    <p>Apna keyboard select karein — baqi details auto-fill hongi</p>
+                </div>
+
+                <!-- 3D Mini Keyboard Preview -->
+                <div class="mini-3d-preview">
+                    <div class="mini-keyboard">
+                        <div class="mini-row">
+                            <span class="mini-esc"></span>
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="mini-row">
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                        <div class="mini-row">
+                            <span class="mini-tab"></span>
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span>
+                        </div>
+                        <div class="mini-row">
+                            <span class="mini-caps"></span>
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span class="mini-enter"></span>
+                        </div>
+                        <div class="mini-row">
+                            <span class="mini-shift"></span>
+                            <span></span><span></span><span></span><span></span>
+                            <span></span><span></span><span></span>
+                            <span class="mini-shift"></span>
+                        </div>
+                        <div class="mini-row">
+                            <span class="mini-ctrl"></span>
+                            <span class="mini-ctrl"></span>
+                            <span class="mini-ctrl"></span>
+                            <span class="mini-space"></span>
+                            <span class="mini-ctrl"></span>
+                            <span class="mini-ctrl"></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FORM -->
+                <form class="details-form" id="detailsForm">
+
+                    <!-- DROPDOWN: Keyboard Model -->
+                    <div class="form-group">
+                        <label for="model">Keyboard Model (Select from list)</label>
+                        <select id="model">
+                            <option value="">-- Select Your Keyboard --</option>
+
+                            <!-- Logitech -->
+                            <option value="Logitech K120"
+                                data-code="KB-120-US"
+                                data-company="Logitech"
+                                data-address="Lausanne, Switzerland"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="104"
+                                data-connection="USB">Logitech K120 (Wired)</option>
+
+                            <option value="Logitech MK270"
+                                data-code="MK270-US"
+                                data-company="Logitech"
+                                data-address="Lausanne, Switzerland"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="104"
+                                data-connection="Wireless">Logitech MK270 (Wireless)</option>
+
+                            <option value="Logitech K380"
+                                data-code="K380-BT"
+                                data-company="Logitech"
+                                data-address="Lausanne, Switzerland"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="80"
+                                data-connection="Bluetooth">Logitech K380 (Bluetooth)</option>
+
+                            <!-- Dell -->
+                            <option value="Dell KB216"
+                                data-code="KB216-BK-US"
+                                data-company="Dell"
+                                data-address="Round Rock, Texas, USA"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="104"
+                                data-connection="USB">Dell KB216 (Wired)</option>
+
+                            <option value="Dell KM636"
+                                data-code="KM636-US"
+                                data-company="Dell"
+                                data-address="Round Rock, Texas, USA"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="104"
+                                data-connection="Wireless">Dell KM636 (Wireless)</option>
+
+                            <!-- HP -->
+                            <option value="HP 100"
+                                data-code="HP-100-US"
+                                data-company="HP"
+                                data-address="Palo Alto, California, USA"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="104"
+                                data-connection="USB">HP 100 (Wired)</option>
+
+                            <option value="HP K500"
+                                data-code="K500-US"
+                                data-company="HP"
+                                data-address="Palo Alto, California, USA"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="104"
+                                data-connection="Wireless">HP K500 (Wireless)</option>
+
+                            <!-- Redragon -->
+                            <option value="Redragon K552"
+                                data-code="K552-RGB"
+                                data-company="Redragon"
+                                data-address="Shenzhen, Guangdong, China"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="87"
+                                data-connection="USB">Redragon K552 (Mechanical)</option>
+
+                            <option value="Redragon K617"
+                                data-code="K617-RGB"
+                                data-company="Redragon"
+                                data-address="Shenzhen, Guangdong, China"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="61"
+                                data-connection="USB">Redragon K617 (Mechanical)</option>
+
+                            <!-- Razer -->
+                            <option value="Razer BlackWidow V3"
+                                data-code="RZ03-0354"
+                                data-company="Razer"
+                                data-address="Singapore"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="104"
+                                data-connection="USB">Razer BlackWidow V3</option>
+
+                            <option value="Razer Huntsman Mini"
+                                data-code="RZ03-0339"
+                                data-company="Razer"
+                                data-address="Singapore"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="61"
+                                data-connection="USB">Razer Huntsman Mini</option>
+
+                            <!-- Corsair -->
+                            <option value="Corsair K70 RGB"
+                                data-code="CH-9109010"
+                                data-company="Corsair"
+                                data-address="Milpitas, California, USA"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="104"
+                                data-connection="USB">Corsair K70 RGB</option>
+
+                            <!-- Apple -->
+                            <option value="Apple Magic Keyboard"
+                                data-code="A1644"
+                                data-company="Apple Inc."
+                                data-address="Cupertino, California, USA"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="78"
+                                data-connection="Bluetooth">Apple Magic Keyboard</option>
+
+                            <!-- Microsoft -->
+                            <option value="Microsoft Wired 600"
+                                data-code="APB-00001"
+                                data-company="Microsoft"
+                                data-address="Redmond, Washington, USA"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="104"
+                                data-connection="USB">Microsoft Wired 600</option>
+
+                            <!-- Generic -->
+                            <option value="Generic USB Keyboard"
+                                data-code="GEN-USB-104"
+                                data-company="Generic"
+                                data-address="N/A"
+                                data-origin="China"
+                                data-layout="QWERTY"
+                                data-keyCount="104"
+                                data-connection="USB">Generic USB Keyboard</option>
+
+                            <!-- Other -->
+                            <option value="Other"
+                                data-code=""
+                                data-company=""
+                                data-address=""
+                                data-origin=""
+                                data-layout="QWERTY"
+                                data-keyCount=""
+                                data-connection="USB">Other (Manually enter)</option>
+                        </select>
+                    </div>
+
+                    <!-- Auto-detected Keyboard Code -->
+                    <div class="form-group">
+                        <label for="code">Keyboard Code (Auto-detected from key press)</label>
+                        <input type="text" id="code" placeholder="Press any key to auto-detect...">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="company">Company / Brand</label>
+                        <input type="text" id="company" placeholder="e.g., Logitech">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Company Address</label>
+                        <input type="text" id="address" placeholder="e.g., Lausanne, Switzerland">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="origin">Country of Origin</label>
+                        <input type="text" id="origin" placeholder="e.g., China">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="connection">Connection Type</label>
+                            <select id="connection">
+                                <option value="USB">USB (Wired)</option>
+                                <option value="Wireless">Wireless</option>
+                                <option value="Bluetooth">Bluetooth</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="layout">Layout</label>
+                            <select id="layout">
+                                <option value="QWERTY">QWERTY</option>
+                                <option value="AZERTY">AZERTY</option>
+                                <option value="QWERTZ">QWERTZ</option>
+                                <option value="Dvorak">Dvorak</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="keyCount">Total Keys</label>
+                        <input type="number" id="keyCount" placeholder="e.g., 104" min="1" max="200">
+                    </div>
+
+                    <!-- BATTERY SECTION -->
+                    <div class="battery-section" id="batterySection" style="display:none;">
+                        <div class="battery-header">
+                            <span>🔋 Battery Level</span>
+                            <strong id="batteryPercent">100%</strong>
+                        </div>
+                        <input type="range" id="batterySlider" min="0" max="100" value="100" class="battery-slider">
+                        <div class="battery-bar-wrapper">
+                            <div class="battery-bar" id="batteryBar" style="width:100%"></div>
+                        </div>
+                        <p class="battery-note" id="batteryNote">Battery level: Full</p>
+                    </div>
+
+                    <!-- ACTION BUTTONS -->
+                    <div class="form-actions">
+                        <button type="button" class="primary-button" id="saveDetails">💾 Save Details</button>
+                        <button type="button" class="secondary-button" id="resetDetails">🗑 Reset</button>
+                        <button type="button" class="secondary-button" id="printDetails">🖨 Print</button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- =========================
+     HOW IT WORKS
+========================= -->
+
+<section class="section light-section" id="guide">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-label">KEYBOARD GUIDE</span>
+            <h2>How to Test a Keyboard</h2>
+            <p>A keyboard tester can help you check individual keys before buying, repairing, or troubleshooting a keyboard.</p>
+        </div>
+
+        <div class="steps-grid">
+            <article class="step-card"><span class="step-number">01</span><h3>Open the tester</h3><p>Open Keyboard Tester Pro in a modern web browser and move to the keyboard testing area.</p></article>
+            <article class="step-card"><span class="step-number">02</span><h3>Press your keys</h3><p>Press the keys you want to check. The tester reads normal keyboard events and displays the detected key.</p></article>
+            <article class="step-card"><span class="step-number">03</span><h3>Check the response</h3><p>Look at the key name, keyboard code, status, and visual keyboard to see whether your browser detected the key.</p></article>
+            <article class="step-card"><span class="step-number">04</span><h3>Repeat the test</h3><p>Test several keys, especially keys that appear to be unreliable, stuck, delayed, or unresponsive.</p></article>
+        </div>
+
+        <div class="content-card">
+            <h3>What does a keyboard tester check?</h3>
+            <p>A keyboard tester checks whether your browser receives keyboard input from the physical keyboard. It can be useful for checking letter keys, number keys, modifier keys, the space bar, Enter, Escape, Backspace, and other commonly used keys.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="section light-section" id="faq">
+    <div class="container">
+        <div class="section-heading">
+            <span class="section-label">FAQ</span>
+            <h2>Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-list">
+            <details><summary>Is Keyboard Tester Pro free?</summary><p>Yes. The keyboard testing tool is designed to be used directly in a web browser without installing keyboard testing software.</p></details>
+            <details><summary>Do I need to download anything?</summary><p>No. The tester runs in your browser.</p></details>
+            <details><summary>Can I test a laptop keyboard?</summary><p>Yes. You can use the tester with a laptop keyboard as long as the browser receives the keyboard input.</p></details>
+            <details><summary>Does the website store the keys I press?</summary><p>The tester is designed to display keyboard events locally in the browser. Do not enter sensitive information.</p></details>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section class="section" id="about">
+    <div class="container narrow-container">
+        <div class="section-heading">
+            <span class="section-label">ABOUT</span>
+            <h2>About Keyboard Tester Pro</h2>
+        </div>
+        <div class="content-card">
+            <p>Keyboard Tester Pro is a browser-based keyboard testing project created to make basic keyboard troubleshooting simple and accessible.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================
+     PRIVACY
+========================= -->
+
+<section class="section light-section" id="privacy">
+    <div class="container narrow-container">
+        <div class="section-heading">
+            <span class="section-label">PRIVACY</span>
+            <h2>Privacy Policy</h2>
+            <p>Last updated: September 13, 2026</p>
+        </div>
+        <div class="content-card">
+            <h3>Information collected</h3>
+            <p>Keyboard events are used to operate the testing interface. Visitors should never enter sensitive information while using an online keyboard testing tool.</p>
+            <h3>Cookies and advertising</h3>
+            <p>Third-party vendors, including Google, use cookies to serve advertisements based on a user's prior visits to this website or other websites.</p>
+        </div>
+    </div>
+</section>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="site-footer">
+    <div class="container footer-content">
+        <div>
+            <h3>⌨ Keyboard Tester Pro</h3>
+            <p>A simple online tool for checking keyboard input.</p>
+        </div>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#tester">Keyboard Test</a>
+            <a href="#details">Details</a>
+            <a href="#faq">FAQ</a>
+            <a href="#privacy">Privacy</a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>© 2026 Keyboard Tester Pro. All rights reserved.</p>
+    </div>
+</footer>
 
 <script src="script.js"></script>
 
