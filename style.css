@@ -1169,3 +1169,346 @@ img {
     font-family: inherit;
     color: #e0e0ff;
 }
+.details-form input::placeholder {
+    color: #6b7280;
+}
+
+.details-form input:focus,
+.details-form select:focus {
+    outline: none;
+    border-color: var(--neon-cyan);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    background: rgba(30, 20, 70, 0.9);
+}
+
+.details-form select option {
+    background: #1a1030;
+    color: #e0e0ff;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+
+/* ---------- BATTERY SECTION ---------- */
+
+.battery-section {
+    background: rgba(0, 255, 255, 0.05);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 14px;
+    margin: 16px 0;
+    animation: fadeIn 0.3s ease;
+    box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.05);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.battery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--neon-cyan);
+}
+
+.battery-header strong {
+    color: var(--neon-cyan);
+    font-size: 16px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+}
+
+.battery-slider {
+    width: 100%;
+    accent-color: var(--neon-cyan);
+    cursor: pointer;
+    margin: 5px 0;
+}
+
+.battery-bar-wrapper {
+    width: 100%;
+    height: 10px;
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+
+.battery-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #22c55e, #16a34a);
+    transition: width 0.3s ease, background 0.3s ease;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+}
+
+.battery-note {
+    font-size: 12px;
+    color: var(--neon-cyan);
+    margin-top: 8px;
+    text-align: center;
+    font-weight: 600;
+}
+
+
+/* ---------- FORM ACTIONS ---------- */
+
+.form-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.form-actions button {
+    flex: 1;
+    min-width: 90px;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 700;
+    transition: transform 0.15s, box-shadow 0.15s, background 0.2s;
+    font-family: inherit;
+}
+
+.form-actions button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+.form-actions .primary-button {
+    background: linear-gradient(135deg, #a855f7, #6366f1);
+    color: white;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+
+.form-actions .primary-button:hover {
+    background: linear-gradient(135deg, #9333ea, #4f46e5);
+    box-shadow: 0 0 25px rgba(168, 85, 247, 0.8);
+}
+
+.form-actions .secondary-button {
+    background: rgba(30, 20, 70, 0.7);
+    color: var(--neon-cyan);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+}
+
+.form-actions .secondary-button:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+
+/* =========================================
+   PRINT STYLES
+========================================= */
+
+@media print {
+    .site-header,
+    .site-footer,
+    .hero,
+    .test-area,
+    .info-grid,
+    .form-actions,
+    .keyboard-title,
+    .menu-button,
+    .navigation,
+    .battery-slider {
+        display: none !important;
+    }
+
+    .keyboard-details-section {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .details-panel {
+        position: static;
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+    .keyboard-details-section {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 1000px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .hero-card {
+        max-width: 650px;
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .problem-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .navigation {
+        gap: 0;
+    }
+
+    .navigation a {
+        padding: 8px;
+    }
+}
+
+@media (max-width: 760px) {
+    .container {
+        width: min(100% - 28px, 1180px);
+    }
+
+    .nav-container {
+        min-height: 64px;
+    }
+
+    .menu-button {
+        display: block;
+    }
+
+    .navigation {
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+        background: rgba(15, 12, 41, 0.98);
+        border-bottom: 1px solid var(--border);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+
+    .navigation.open {
+        display: flex;
+    }
+
+    .navigation a {
+        padding: 12px;
+        border-radius: 8px;
+    }
+
+    .hero {
+        padding: 65px 0;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .section {
+        padding: 65px 0;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .steps-grid,
+    .problem-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        justify-content: flex-start;
+    }
+
+    .keyboard-wrapper-3d {
+        padding: 12px;
+    }
+
+    .details-panel {
+        padding: 18px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 37px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .primary-button,
+    .secondary-button {
+        width: 100%;
+    }
+
+    .hero-card {
+        padding: 25px;
+    }
+
+    .content-card {
+        padding: 22px;
+    }
+
+    .keyboard-title {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+}
